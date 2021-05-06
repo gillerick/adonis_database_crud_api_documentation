@@ -1,0 +1,89 @@
+swagger: "2.0"
+info:
+  title: Sendy Interns API
+  description: An API for managing and viewing interns
+  version: 1.0.0
+host: 127.0.0.1:3333
+basePath: /
+schemes:
+  - http
+paths:
+  /interns:
+    get:
+      summary: Fetch all interns
+      description: Fetches a list of all Sendy interns
+      produces:
+        - application/json
+      responses:
+        200:
+          description: Success
+        404:
+          description: Intern with ID does not exist
+    post:
+      summary: Create new intern
+      description: Saves new intern to database
+      produces:
+        - application/json
+      responses:
+        201:
+          description: Successfully created new user
+        204:
+          description:  Intern with ID does not exist
+  /interns/{id}:
+    get:
+      summary: Fetch a single intern
+      description: Fetches the details of intern with specified ID
+      produces:
+        - application/json
+      parameters:
+        - in: path
+          name: id
+          required: true
+          type: integer
+          minimum: 1
+          description: The ID of the queried intern 
+      responses:
+        200:
+          description: Successfully fetched user details
+        403:
+          description: Wrong input format
+        404:
+          description: Intern with ID does not exist
+    put:
+      summary: Update intern details
+      description: Update details of specified intern
+      produces:
+        - application/json
+      parameters:
+        - in: path
+          name: id
+          required: true
+          type: integer
+          minimum: 1
+          description: ID of intern to be updated
+      responses:
+        200:
+          description: Intern details successfully updated
+        403:
+          description: Wrong input format
+        404:
+          description:  Intern with ID does not exist
+    delete:
+      summary: Delete intern
+      description: Deletes a specified intern from the database
+      produces:
+        - application/json
+      parameters:
+        - in: path
+          name: id
+          required: true
+          type: integer
+          minimum: 1
+          description: ID of the intern to delete
+      responses:
+        200:
+          description: Intern successfully deleted
+        403:
+          description: Wrong input format
+        404:
+          description: Intern with ID does not exist
