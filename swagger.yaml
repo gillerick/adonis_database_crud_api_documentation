@@ -10,7 +10,7 @@ schemes:
 paths:
   /interns:
     get:
-      summary: Fetch all interns
+      summary: Fetch All Interns
       description: Fetches a list of all Sendy interns
       produces:
         - application/json
@@ -20,7 +20,7 @@ paths:
         404:
           description: Intern with ID does not exist
     post:
-      summary: Create new intern
+      summary: Create New Intern
       description: Saves new intern to database
       produces:
         - application/json
@@ -31,7 +31,7 @@ paths:
           description:  Intern with ID does not exist
   /interns/{id}:
     get:
-      summary: Fetch a single intern
+      summary: Fetch Single Intern
       description: Fetches the details of intern with specified ID
       produces:
         - application/json
@@ -50,7 +50,7 @@ paths:
         404:
           description: Intern with ID does not exist
     put:
-      summary: Update intern details
+      summary: Update Intern
       description: Update details of specified intern
       produces:
         - application/json
@@ -69,7 +69,7 @@ paths:
         404:
           description:  Intern with ID does not exist
     delete:
-      summary: Delete intern
+      summary: Delete Intern
       description: Deletes a specified intern from the database
       produces:
         - application/json
